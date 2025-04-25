@@ -23,11 +23,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className='bg-destructive text-white py-4'>
+          <div className='container mx-auto px-4'>
+            <h1 className='text-2xl font-bold'>Welcome to astzo</h1>
+          </div>
+        </header>
+        <main className='font-[family-name:var(--font-geist-sans)]'>
+          {children}
+        </main>
+        <footer>
+          <div className='container mx-auto px-4 py-8 text-center text-sm text-gray-500'>
+            &copy; {new Date().getFullYear()} astzo. All rights reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );
