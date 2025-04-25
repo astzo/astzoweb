@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Home, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Wrapper from "./Wrapper";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -15,27 +14,27 @@ import {
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: "Home", href: "/", icon: Home },
+  { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
   { name: "Services", href: "/services" },
   {
     name: "Company",
     href: "#",
     subItems: [
-      { name: "About Us", href: "/company/about-us", icon: Home },
-      { name: "Career", href: "/company/career" },
-      { name: "Life @ASTZO", href: "/company/life-at-astzo" },
+      { name: "About Us", href: "/about-us" },
+      { name: "Career", href: "/career" },
+      { name: "Life @ASTZO", href: "/life-at-astzo" },
     ],
   },
   {
     name: "Resources",
     href: "#",
     subItems: [
-      { name: "Documentation", href: "/resources/documentation" },
-      { name: "Blog", href: "/resources/blog" },
-      { name: "News", href: "/resources/news" },
-      { name: "Product Update", href: "/resources/product-update" },
-      { name: "Community & Support", href: "/resources/community-and-support" },
+      { name: "Documentation", href: "/documentation" },
+      { name: "Blog", href: "/blog" },
+      { name: "News", href: "/news" },
+      { name: "Product Update", href: "/product-update" },
+      { name: "Community & Support", href: "/community-and-support" },
     ],
   },
 ];
@@ -44,32 +43,36 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  return (
-    <Wrapper className='flex items-center justify-between gap-4'>
-      {/* Logo */}
-      <div className='text-xl font-bold text-primary'>ASTZO</div>
-
-      {/* Desktop Nav */}
-      <div className='hidden md:flex gap-6'>
+  // Render navigation links (used for both desktop and mobile)
+  const renderNavLinks = () => {
+    return (
+      <>
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={item.href || "#"}
-            className={`text-foreground hover:text-accent ${pathname === item.href && " text-red-600"}`}
+            className={`font-semibold text-[16px] hover:text-accent ${
+              pathname === item.href && "text-orange-500"
+            }`}
           >
-            <div className='flex items-center gap-2 w-full hover:bg-secondary px-2 py-1 rounded-md'>
-              {item?.icon && <item.icon />}
+            <div className='flex items-center gap-2 w-full px-2 py-1 rounded-md border-none'>
+              {/* {item?.icon && <item.icon />} */}
               {item.subItems ? (
                 <DropdownMenu>
-                  <DropdownMenuTrigger className='hover:text-primary'>
+                  <DropdownMenuTrigger className='focus:outline-none focus:ring-0'>
                     {item.name}
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     {item.subItems.map((subItem: any) => (
                       <DropdownMenuItem key={subItem.name}>
-                        <Link href={subItem.href || "#"} className={`w-full ${pathname === subItem.href && " text-red-600"}`}>
+                        <Link
+                          href={subItem.href || "#"}
+                          className={`w-full text-[16px] font-semibold ${
+                            pathname === subItem.href && " text-red-600"
+                          }`}
+                        >
                           <div className='flex items-center gap-2 w-full '>
-                            {subItem?.icon && <subItem.icon />}
+                            {/* {subItem?.icon && <subItem.icon />} */}
                             {subItem.name}
                           </div>
                         </Link>
@@ -83,29 +86,53 @@ const Navbar = () => {
             </div>
           </Link>
         ))}
+      </>
+    );
+  };
+
+  return (
+    <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
+      {/* Logo */}
+      <div className='text-2xl font-bold '>
+        ASTZ<span className='text-accent'>O</span>
+      </div>
+
+      {/* Desktop Nav */}
+      <div className='hidden md:flex justify-end items-center gap-2 lg:gap-6 '>
+        {renderNavLinks()}
+        <Button className='bg-accent text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+          <Link href='/contact-us' className='w-full'>
+            Contact Us
+          </Link>
+        </Button>
       </div>
 
       {/* Right Actions */}
-      <div className='md:hidden flex items-center gap-2 '>
+      <div className='md:hidden flex items-center gap-2'>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
               variant='ghost'
               size='icon'
-              className='md:hidden'
+              className=''
               aria-label='Open Menu'
             >
               {open ? <X className='h-5 w-5' /> : <Menu className='h-5 w-5' />}
             </Button>
           </SheetTrigger>
-          <SheetContent side='left' className='w-3/4 sm:w-1/2'>
-            <div className='flex flex-col gap-4 mt-8'>
-              {/* renderNavbar here */}
+          <SheetContent side='left' className='w-3/4 sm:w-1/2  rounded-lg'>
+            <div className='flex flex-col gap-2 mt-10 mx-2.5'>
+              {renderNavLinks()}
+              <Button className='bg-accent mt-2 text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+                <Link href='/contact-us' className='w-full'>
+                  Contact Us
+                </Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 export default Navbar;
