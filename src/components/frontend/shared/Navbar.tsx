@@ -63,7 +63,7 @@ const Navbar = () => {
                     {item.name}
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    {item.subItems.map((subItem: any) => (
+                    {item.subItems.map((subItem) => (
                       <DropdownMenuItem key={subItem.name}>
                         <Link
                           href={subItem.href || "#"}
