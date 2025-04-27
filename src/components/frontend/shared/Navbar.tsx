@@ -44,6 +44,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  // Add new state to track dropdown open state
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
   // Modified navbar scrolling effect
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -59,6 +62,11 @@ const Navbar = () => {
         setIsVisible(false);
       }
 
+      // Close dropdown when scrolling
+      if (openDropdown) {
+        setOpenDropdown(null);
+      }
+
       setLastScrollY(currentScrollY);
     };
 
@@ -67,50 +75,60 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, openDropdown]);
 
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
     return (
       <>
         {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href || "#"}
-            className={`font-semibold text-[16px] text-background transition-all duration-500 hover:text-accent ${
-              pathname === item.href && "text-orange-500"
-            }`}
-          >
-            <div className='flex items-center gap-2 w-full px-2 py-1 rounded-md border-none'>
-              {/* {item?.icon && <item.icon />} */}
-              {item.subItems ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger className='focus:outline-none focus:ring-0'>
-                    {item.name}
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {item.subItems.map((subItem) => (
-                      <DropdownMenuItem key={subItem.name}>
-                        <Link
-                          href={subItem.href || "#"}
-                          className={`w-full text-[16px] font-semibold ${
-                            pathname === subItem.href && " text-red-600"
-                          }`}
+          <div key={item.name} className="relative inline-block">
+            <Link
+              href={item.href || "#"}
+              className={`font-semibold text-[16px] text-background transition-all duration-500 hover:text-accent ${
+                pathname === item.href && "text-orange-500"
+              }`}
+            >
+              <div className='flex items-center gap-2 w-full px-2 py-1'>
+                {item.subItems ? (
+                  <DropdownMenu 
+                    modal={false}
+                    open={openDropdown === item.name}
+                    onOpenChange={(open) => {
+                      setOpenDropdown(open ? item.name : null);
+                    }}
+                  >
+                    <DropdownMenuTrigger className='focus:outline-none focus:ring-0'>
+                      {item.name}
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent 
+                      className='p-3 mt-4 bg-primary/95 text-background border-none shadow-3xl'
+                      sideOffset={5}
+                      align="start"
+                    >
+                      {item.subItems.map((subItem) => (
+                        <DropdownMenuItem 
+                          key={subItem.name}
+                          className="whitespace-nowrap"
                         >
-                          <div className='flex items-center gap-2 w-full '>
-                            {/* {subItem?.icon && <subItem.icon />} */}
+                          <Link
+                            href={subItem.href || "#"}
+                            className={`w-full text-[16px] font-semibold ${
+                              pathname === subItem.href && "text-orange-500"
+                            }`}
+                          >
                             {subItem.name}
-                          </div>
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <span>{item.name}</span>
-              )}
-            </div>
-          </Link>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <span>{item.name}</span>
+                )}
+              </div>
+            </Link>
+          </div>
         ))}
       </>
     );
@@ -118,22 +136,21 @@ const Navbar = () => {
 
   return (
     <div className='h-[68px]'>
-      <nav
-        id='header'
-        className={`w-full fixed top-0 left-0 z-50 bg-primary/90 transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
+        <nav
+          id='header'
+          className={`container mx-auto px-2.5 py-5 flex items-center justify-between fixed top-0 left-0 z-50 bg-primary/90 transition-transform duration-300 ${
+            isVisible ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           {/* Logo */}
           <div className='text-3xl font-bold text-background flex items-center gap-0 relative'>
             <span>ASTZ</span>
             <svg
-              width='100'
-              height='100'
+              width='90'
+              height='90'
               viewBox='0 0 300 300'
               xmlns='http://www.w3.org/2000/svg'
-              className='absolute z-10 left-12'
+              className='absolute z-10 left-13'
             >
               <defs>
                 <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
@@ -252,7 +269,10 @@ const Navbar = () => {
                   )}
                 </div>
               </SheetTrigger>
-              <SheetContent side='left' className='w-3/4 sm:w-1/2 rounded-r bg-primary/80 border-none text-white'>
+              <SheetContent
+                side='left'
+                className='w-3/4 sm:w-1/2 rounded-r bg-primary/80 border-none text-white'
+              >
                 <div className='flex flex-col gap-2 mt-10 mx-2.5'>
                   {renderNavLinks()}
                   <Button className='bg-accent mt-2 text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
@@ -264,8 +284,7 @@ const Navbar = () => {
               </SheetContent>
             </Sheet>
           </div>
-        </div>
-      </nav>
+        </nav>
     </div>
   );
 };

@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${montserrat.variable} antialiased font-[family-name:var(--font-montserrat-sans)]`}
       >
         <Navbar />
-        <main className='relative min-h-screen'>
+        <main className='relative min-h-[10000px]'>
           <ParticlesBackground />
           {children}
         </main>
