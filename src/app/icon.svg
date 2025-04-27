@@ -1,0 +1,26 @@
+<svg width='200' height='200' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'>
+    <defs>
+        <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
+            <feDropShadow dx='0' dy='0' stdDeviation='4' flood-color='orange' />
+            <feDropShadow dx='0' dy='0' stdDeviation='8' flood-color='orange' />
+            <feDropShadow dx='0' dy='0' stdDeviation='12' flood-color='orange' />
+        </filter>
+    </defs>
+
+    {/* Base O */}
+    <text x='50%' y='50%' text-anchor='middle' dy='.35em' font-size='120' font-family='arial' fill='#FF5C00'
+        stroke='none' stroke-width='3' filter='url(#)'>
+        O
+    </text>
+
+    {/* Ripple Circles */}
+    <circle cx='150' cy='150' r='70' stroke='orange' stroke-width='2' fill='none' filter='url(#glow)'>
+        <animate attributeName='r' from='70' to='140' dur='2s' repeatCount='indefinite' />
+        <animate attributeName='opacity' from='1' to='0' dur='2s' repeatCount='indefinite' />
+    </circle>
+
+    <circle cx='150' cy='150' r='70' stroke='orange' stroke-width='2' fill='none' filter='url(#glow)'>
+        <animate attributeName='r' from='70' to='140' dur='2s' begin='1s' repeatCount='indefinite' />
+        <animate attributeName='opacity' from='1' to='0' dur='2s' begin='1s' repeatCount='indefinite' />
+    </circle>
+</svg>

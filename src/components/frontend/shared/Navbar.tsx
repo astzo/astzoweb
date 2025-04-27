@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -43,6 +43,30 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  //  handle navbar scrolling effect
+  const [isFixed, setIsFixed] = useState(false);
+  let lastScrollY = 0;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        // Scrolling Up
+        setIsFixed(true);
+      } else {
+        // Scrolling Down
+        setIsFixed(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
     return (
@@ -51,7 +75,7 @@ const Navbar = () => {
           <Link
             key={item.name}
             href={item.href || "#"}
-            className={`font-semibold text-[16px] hover:text-accent ${
+            className={`font-semibold text-[16px] text-background transition-all duration-500 hover:text-accent ${
               pathname === item.href && "text-orange-500"
             }`}
           >
@@ -63,7 +87,7 @@ const Navbar = () => {
                     {item.name}
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    {item.subItems.map((subItem: any) => (
+                    {item.subItems.map((subItem) => (
                       <DropdownMenuItem key={subItem.name}>
                         <Link
                           href={subItem.href || "#"}
@@ -91,48 +115,158 @@ const Navbar = () => {
   };
 
   return (
-    <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
-      {/* Logo */}
-      <div className='text-2xl font-bold '>
-        ASTZ<span className='text-accent'>O</span>
-      </div>
+    <nav
+      id='header'
+      className={`w-full bg-foreground/70 ${
+        isFixed ? "fixed  top-0 left-0 z-50" : "static"
+      }`}
+    >
+      <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
+        {/* Logo */}
+        <div className='text-3xl font-bold text-background flex items-center gap-0 relative'>
+          <span>ASTZ</span>
+          <svg
+            width='100'
+            height='100'
+            viewBox='0 0 300 300'
+            xmlns='http://www.w3.org/2000/svg'
+            className="absolute -z-10 left-12"
+          >
+            <defs>
+              <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='4'
+                  flood-color='orange'
+                />
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='8'
+                  flood-color='orange'
+                />
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='12'
+                  flood-color='orange'
+                />
+              </filter>
+            </defs>
 
-      {/* Desktop Nav */}
-      <div className='hidden md:flex justify-end items-center gap-2 lg:gap-6 '>
-        {renderNavLinks()}
-        <Button className='bg-accent text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
-          <Link href='/contact-us' className='w-full'>
-            Contact Us
-          </Link>
-        </Button>
-      </div>
-
-      {/* Right Actions */}
-      <div className='md:hidden flex items-center gap-2'>
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant='ghost'
-              size='icon'
-              className=''
-              aria-label='Open Menu'
+            {/* Base O */}
+            <text
+              x='50%'
+              y='50%'
+              text-anchor='middle'
+              dy='.35em'
+              font-size='120'
+              font-family='montserrat'
+              fill='#FF5C00'
+              stroke='none'
+              stroke-width='3'
+              filter='url(#)'
             >
-              {open ? <X className='h-5 w-5' /> : <Menu className='h-5 w-5' />}
-            </Button>
-          </SheetTrigger>
-          <SheetContent side='left' className='w-3/4 sm:w-1/2  rounded-lg'>
-            <div className='flex flex-col gap-2 mt-10 mx-2.5'>
-              {renderNavLinks()}
-              <Button className='bg-accent mt-2 text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
-                <Link href='/contact-us' className='w-full'>
-                  Contact Us
-                </Link>
+              O
+            </text>
+
+            {/* Ripple Circles */}
+            <circle
+              cx='150'
+              cy='150'
+              r='70'
+              stroke='orange'
+              stroke-width='2'
+              fill='none'
+              filter='url(#glow)'
+            >
+              <animate
+                attributeName='r'
+                from='70'
+                to='140'
+                dur='2s'
+                repeatCount='indefinite'
+              />
+              <animate
+                attributeName='opacity'
+                from='1'
+                to='0'
+                dur='2s'
+                repeatCount='indefinite'
+              />
+            </circle>
+
+            <circle
+              cx='150'
+              cy='150'
+              r='70'
+              stroke='orange'
+              stroke-width='2'
+              fill='none'
+              filter='url(#glow)'
+            >
+              <animate
+                attributeName='r'
+                from='70'
+                to='140'
+                dur='2s'
+                begin='1s'
+                repeatCount='indefinite'
+              />
+              <animate
+                attributeName='opacity'
+                from='1'
+                to='0'
+                dur='2s'
+                begin='1s'
+                repeatCount='indefinite'
+              />
+            </circle>
+          </svg>
+        </div>
+
+        {/* Desktop Nav */}
+        <div className='hidden md:flex justify-end items-center gap-2 lg:gap-6 '>
+          {renderNavLinks()}
+          <Button className='bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+            <Link href='/contact-us' className='w-full'>
+              Contact Us
+            </Link>
+          </Button>
+        </div>
+
+        {/* Right Actions */}
+        <div className='md:hidden flex items-center gap-2'>
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant='ghost'
+                size='icon'
+                className=''
+                aria-label='Open Menu'
+              >
+                {open ? (
+                  <X className='h-5 w-5' />
+                ) : (
+                  <Menu className='h-5 w-5' />
+                )}
               </Button>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </SheetTrigger>
+            <SheetContent side='left' className='w-3/4 sm:w-1/2  rounded-lg'>
+              <div className='flex flex-col gap-2 mt-10 mx-2.5'>
+                {renderNavLinks()}
+                <Button className='bg-accent mt-2 text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+                  <Link href='/contact-us' className='w-full'>
+                    Contact Us
+                  </Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 export default Navbar;
