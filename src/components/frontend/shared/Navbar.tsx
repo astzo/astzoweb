@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
@@ -81,11 +81,11 @@ const Navbar = () => {
               pathname === item.href && "text-orange-500"
             }`}
           >
-            <div className="flex items-center gap-2 w-full px-2 py-1 rounded-md border-none">
+            <div className='flex items-center gap-2 w-full px-2 py-1 rounded-md border-none'>
               {/* {item?.icon && <item.icon />} */}
               {item.subItems ? (
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="focus:outline-none focus:ring-0">
+                  <DropdownMenuTrigger className='focus:outline-none focus:ring-0'>
                     {item.name}
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -97,7 +97,7 @@ const Navbar = () => {
                             pathname === subItem.href && " text-red-600"
                           }`}
                         >
-                          <div className="flex items-center gap-2 w-full ">
+                          <div className='flex items-center gap-2 w-full '>
                             {/* {subItem?.icon && <subItem.icon />} */}
                             {subItem.name}
                           </div>
@@ -117,150 +117,146 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-[68px]">
+    <div className='h-[68px]'>
       <nav
-        id="header"
+        id='header'
         className={`w-full fixed top-0 left-0 z-50 bg-primary/90 transition-transform duration-300 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="container mx-auto px-2.5 py-4 flex items-center justify-between">
+        <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
           {/* Logo */}
-          <div className="text-3xl font-bold text-background flex items-center gap-0 relative">
+          <div className='text-3xl font-bold text-background flex items-center gap-0 relative'>
             <span>ASTZ</span>
             <svg
-              width="100"
-              height="100"
-              viewBox="0 0 300 300"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute z-10 left-12"
+              width='100'
+              height='100'
+              viewBox='0 0 300 300'
+              xmlns='http://www.w3.org/2000/svg'
+              className='absolute z-10 left-12'
             >
               <defs>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
                   <feDropShadow
-                    dx="0"
-                    dy="0"
-                    stdDeviation="4"
-                    floodColor="orange"
+                    dx='0'
+                    dy='0'
+                    stdDeviation='4'
+                    floodColor='orange'
                   />
                   <feDropShadow
-                    dx="0"
-                    dy="0"
-                    stdDeviation="8"
-                    floodColor="orange"
+                    dx='0'
+                    dy='0'
+                    stdDeviation='8'
+                    floodColor='orange'
                   />
                   <feDropShadow
-                    dx="0"
-                    dy="0"
-                    stdDeviation="12"
-                    floodColor="orange"
+                    dx='0'
+                    dy='0'
+                    stdDeviation='12'
+                    floodColor='orange'
                   />
                 </filter>
               </defs>
 
               {/* Base O */}
               <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                dy=".35em"
-                fontSize="120"
-                fontFamily="montserrat"
-                fill="#FF5C00"
-                stroke="none"
-                strokeWidth="3"
-                filter="url(#)"
+                x='50%'
+                y='50%'
+                textAnchor='middle'
+                dy='.35em'
+                fontSize='120'
+                fontFamily='montserrat'
+                fill='#FF5C00'
+                stroke='none'
+                strokeWidth='3'
+                filter='url(#)'
               >
                 O
               </text>
 
               {/* Ripple Circles */}
               <circle
-                cx="150"
-                cy="150"
-                r="70"
-                stroke="orange"
-                strokeWidth="2"
-                fill="none"
-                filter="url(#glow)"
+                cx='150'
+                cy='150'
+                r='70'
+                stroke='orange'
+                strokeWidth='2'
+                fill='none'
+                filter='url(#glow)'
               >
                 <animate
-                  attributeName="r"
-                  from="70"
-                  to="140"
-                  dur="2s"
-                  repeatCount="indefinite"
+                  attributeName='r'
+                  from='70'
+                  to='140'
+                  dur='2s'
+                  repeatCount='indefinite'
                 />
                 <animate
-                  attributeName="opacity"
-                  from="1"
-                  to="0"
-                  dur="2s"
-                  repeatCount="indefinite"
+                  attributeName='opacity'
+                  from='1'
+                  to='0'
+                  dur='2s'
+                  repeatCount='indefinite'
                 />
               </circle>
 
               <circle
-                cx="150"
-                cy="150"
-                r="70"
-                stroke="orange"
-                strokeWidth="2"
-                fill="none"
-                filter="url(#glow)"
+                cx='150'
+                cy='150'
+                r='70'
+                stroke='orange'
+                strokeWidth='2'
+                fill='none'
+                filter='url(#glow)'
               >
                 <animate
-                  attributeName="r"
-                  from="70"
-                  to="140"
-                  dur="2s"
-                  begin="1s"
-                  repeatCount="indefinite"
+                  attributeName='r'
+                  from='70'
+                  to='140'
+                  dur='2s'
+                  begin='1s'
+                  repeatCount='indefinite'
                 />
                 <animate
-                  attributeName="opacity"
-                  from="1"
-                  to="0"
-                  dur="2s"
-                  begin="1s"
-                  repeatCount="indefinite"
+                  attributeName='opacity'
+                  from='1'
+                  to='0'
+                  dur='2s'
+                  begin='1s'
+                  repeatCount='indefinite'
                 />
               </circle>
             </svg>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex justify-end items-center gap-2 lg:gap-6 ">
+          <div className='hidden md:flex justify-end items-center gap-2 lg:gap-6 '>
             {renderNavLinks()}
-            <Button className="bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200">
-              <Link href="/contact-us" className="w-full">
+            <Button className='bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+              <Link href='/contact-us' className='w-full'>
                 Contact Us
               </Link>
             </Button>
           </div>
 
           {/* Right Actions */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className='md:hidden flex items-center gap-2'>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className=""
-                  aria-label="Open Menu"
-                >
+                <div className=' text-background'>
                   {open ? (
-                    <X className="h-5 w-5" />
+                    // <X className='h-8 w-8' />
+                    ""
                   ) : (
-                    <Menu className="h-5 w-5" />
+                    <Menu className='h-8 w-8' />
                   )}
-                </Button>
+                </div>
               </SheetTrigger>
-              <SheetContent side="left" className="w-3/4 sm:w-1/2  rounded-lg">
-                <div className="flex flex-col gap-2 mt-10 mx-2.5">
+              <SheetContent side='left' className='w-3/4 sm:w-1/2 rounded-r bg-primary/80 border-none text-white'>
+                <div className='flex flex-col gap-2 mt-10 mx-2.5'>
                   {renderNavLinks()}
-                  <Button className="bg-accent mt-2 text-white text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200">
-                    <Link href="/contact-us" className="w-full">
+                  <Button className='bg-accent mt-2 text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
+                    <Link href='/contact-us' className='w-full'>
                       Contact Us
                     </Link>
                   </Button>
