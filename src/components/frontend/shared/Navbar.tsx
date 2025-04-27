@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -44,7 +45,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   //  handle navbar scrolling effect
-  const [isFixed, setIsFixed] = useState(false);
+  const [isFixed, setIsFixed] = useState(true);
   let lastScrollY = 0;
 
   useEffect(() => {
@@ -117,7 +118,7 @@ const Navbar = () => {
   return (
     <nav
       id='header'
-      className={`w-full bg-foreground/70 ${
+      className={`w-full bg-primary opacity-90 ${
         isFixed ? "fixed  top-0 left-0 z-50" : "static"
       }`}
     >
@@ -130,7 +131,7 @@ const Navbar = () => {
             height='100'
             viewBox='0 0 300 300'
             xmlns='http://www.w3.org/2000/svg'
-            className="absolute -z-10 left-12"
+            className='absolute z-10 left-12'
           >
             <defs>
               <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
@@ -138,19 +139,19 @@ const Navbar = () => {
                   dx='0'
                   dy='0'
                   stdDeviation='4'
-                  flood-color='orange'
+                  floodColor='orange'
                 />
                 <feDropShadow
                   dx='0'
                   dy='0'
                   stdDeviation='8'
-                  flood-color='orange'
+                  floodColor='orange'
                 />
                 <feDropShadow
                   dx='0'
                   dy='0'
                   stdDeviation='12'
-                  flood-color='orange'
+                  floodColor='orange'
                 />
               </filter>
             </defs>
@@ -159,13 +160,13 @@ const Navbar = () => {
             <text
               x='50%'
               y='50%'
-              text-anchor='middle'
+              textAnchor='middle'
               dy='.35em'
-              font-size='120'
-              font-family='montserrat'
+              fontSize='120'
+              fontFamily='montserrat'
               fill='#FF5C00'
               stroke='none'
-              stroke-width='3'
+              strokeWidth='3'
               filter='url(#)'
             >
               O
@@ -177,7 +178,7 @@ const Navbar = () => {
               cy='150'
               r='70'
               stroke='orange'
-              stroke-width='2'
+              strokeWidth='2'
               fill='none'
               filter='url(#glow)'
             >
@@ -202,7 +203,7 @@ const Navbar = () => {
               cy='150'
               r='70'
               stroke='orange'
-              stroke-width='2'
+              strokeWidth='2'
               fill='none'
               filter='url(#glow)'
             >
