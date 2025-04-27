@@ -44,28 +44,28 @@ const Navbar = () => {
   const pathname = usePathname();
 
   //  handle navbar scrolling effect
- const [isFixed, setIsFixed] = useState(false);
- let lastScrollY = 0;
+  const [isFixed, setIsFixed] = useState(false);
+  let lastScrollY = 0;
 
- useEffect(() => {
-   const handleScroll = () => {
-     const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-     if (currentScrollY < lastScrollY) {
-       // Scrolling Up
-       setIsFixed(true);
-     } else {
-       // Scrolling Down
-       setIsFixed(false);
-     }
+      if (currentScrollY < lastScrollY) {
+        // Scrolling Up
+        setIsFixed(true);
+      } else {
+        // Scrolling Down
+        setIsFixed(false);
+      }
 
-     lastScrollY = currentScrollY;
-   };
+      lastScrollY = currentScrollY;
+    };
 
-   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-   return () => window.removeEventListener("scroll", handleScroll);
- }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
@@ -123,8 +123,107 @@ const Navbar = () => {
     >
       <div className='container mx-auto px-2.5 py-4 flex items-center justify-between'>
         {/* Logo */}
-        <div className='text-2xl font-bold text-background'>
-          ASTZ<span className='text-accent'>O</span>
+        <div className='text-3xl font-bold text-background flex items-center gap-0 relative'>
+          <span>ASTZ</span>
+          <svg
+            width='100'
+            height='100'
+            viewBox='0 0 300 300'
+            xmlns='http://www.w3.org/2000/svg'
+            className="absolute -z-10 left-12"
+          >
+            <defs>
+              <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='4'
+                  flood-color='orange'
+                />
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='8'
+                  flood-color='orange'
+                />
+                <feDropShadow
+                  dx='0'
+                  dy='0'
+                  stdDeviation='12'
+                  flood-color='orange'
+                />
+              </filter>
+            </defs>
+
+            {/* Base O */}
+            <text
+              x='50%'
+              y='50%'
+              text-anchor='middle'
+              dy='.35em'
+              font-size='120'
+              font-family='montserrat'
+              fill='#FF5C00'
+              stroke='none'
+              stroke-width='3'
+              filter='url(#)'
+            >
+              O
+            </text>
+
+            {/* Ripple Circles */}
+            <circle
+              cx='150'
+              cy='150'
+              r='70'
+              stroke='orange'
+              stroke-width='2'
+              fill='none'
+              filter='url(#glow)'
+            >
+              <animate
+                attributeName='r'
+                from='70'
+                to='140'
+                dur='2s'
+                repeatCount='indefinite'
+              />
+              <animate
+                attributeName='opacity'
+                from='1'
+                to='0'
+                dur='2s'
+                repeatCount='indefinite'
+              />
+            </circle>
+
+            <circle
+              cx='150'
+              cy='150'
+              r='70'
+              stroke='orange'
+              stroke-width='2'
+              fill='none'
+              filter='url(#glow)'
+            >
+              <animate
+                attributeName='r'
+                from='70'
+                to='140'
+                dur='2s'
+                begin='1s'
+                repeatCount='indefinite'
+              />
+              <animate
+                attributeName='opacity'
+                from='1'
+                to='0'
+                dur='2s'
+                begin='1s'
+                repeatCount='indefinite'
+              />
+            </circle>
+          </svg>
         </div>
 
         {/* Desktop Nav */}
