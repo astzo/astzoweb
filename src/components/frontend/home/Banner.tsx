@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-      <div className=' w-full h-[90vh] bg-[url(/images/hero.jpg)] bg-cover bg-center bg-no-repeat'></div>
+      <div className='w-full h-[90vh] -mt-[68px] bg-[url(/images/hero.jpg)] bg-cover bg-center bg-no-repeat'></div>
     );
 };
 
