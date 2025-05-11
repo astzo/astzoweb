@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
+  // { name: "Products", href: "/products" },
   { name: "Services", href: "/services" },
   {
     name: "Company",
@@ -25,11 +25,11 @@ const navItems = [
     name: "Resources",
     href: "#",
     subItems: [
-      { name: "Documentation", href: "/documentation" },
+      // { name: "Documentation", href: "/documentation" },
       { name: "Blog", href: "/blog" },
-      { name: "News", href: "/news" },
-      { name: "Product Update", href: "/product-update" },
-      { name: "Community & Support", href: "/community-and-support" },
+      // { name: "Product Update", href: "/product-update" },
+      { name: "Community", href: "/community" },
+      { name: "Support", href: "/support" },
     ],
   },
 ];
@@ -83,7 +83,7 @@ const Navbar = () => {
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
     return (
-      <>
+      <div className='flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6 '>
         {navItems.map((item) => (
           <div
             key={item.name}
@@ -132,7 +132,12 @@ const Navbar = () => {
             )}
           </div>
         ))}
-      </>
+        <Button className='bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200 border-none shadow-none'>
+          <Link href='/contact-us' className='w-full'>
+            Contact Us
+          </Link>
+        </Button>
+      </div>
     );
   };
 
@@ -251,17 +256,12 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className='hidden md:flex justify-end items-center gap-2 lg:gap-6 '>
+        <div className='hidden md:block'>
           {renderNavLinks()}
-          <Button className='bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
-            <Link href='/contact-us' className='w-full'>
-              Contact Us
-            </Link>
-          </Button>
         </div>
 
         {/* Right Actions */}
-        <div className='md:hidden flex items-center gap-2'>
+        <div className='block md:hidden'>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <div className=' text-background'>
@@ -276,15 +276,10 @@ const Navbar = () => {
             <SheetDescription>{""}</SheetDescription>
             <SheetContent
               side='left'
-              className='w-3/4 sm:w-1/2 rounded-r bg-primary/80 border-none text-white'
+              className='w-3/4 sm:w-1/2 rounded-r bg-primary/80 border-none text-white overflow-auto'
             >
               <div className='flex flex-col gap-2 mt-10 mx-2.5'>
                 {renderNavLinks()}
-                <Button className='bg-accent mt-2 text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200'>
-                  <Link href='/contact-us' className='w-full'>
-                    Contact Us
-                  </Link>
-                </Button>
               </div>
             </SheetContent>
           </Sheet>
