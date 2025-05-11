@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
+  // { name: "Products", href: "/products" },
   { name: "Services", href: "/services" },
   {
     name: "Company",
@@ -25,11 +25,11 @@ const navItems = [
     name: "Resources",
     href: "#",
     subItems: [
-      { name: "Documentation", href: "/documentation" },
+      // { name: "Documentation", href: "/documentation" },
       { name: "Blog", href: "/blog" },
-      { name: "News", href: "/news" },
-      { name: "Product Update", href: "/product-update" },
-      { name: "Community & Support", href: "/community-and-support" },
+      // { name: "Product Update", href: "/product-update" },
+      { name: "Community", href: "/community" },
+      { name: "Support", href: "/support" },
     ],
   },
 ];
