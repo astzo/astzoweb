@@ -1,0 +1,183 @@
+[
+    {
+      "title": "Full Stack Web Development Services",
+      "description": "Scalable and secure full stack web apps built using modern technologies like MERN and MEAN.",
+      "intro": "Build fast, secure, and scalable web applications from scratch with our full stack development services. We specialize in MERN, MEAN, and modern tech stacks tailored for performance and growth.",
+      "benefits": [
+        "Complete frontend and backend solutions",
+        "Responsive and scalable architecture",
+        "RESTful APIs and real-time integrations",
+        "Database and cloud integration",
+        "Security best practices"
+      ],
+      "delivery": "Our team handles everything from UI to deployment using Agile methodology.",
+      "why_astzo": "We bring years of experience in full stack projects, offer flexible engagement models, and ensure timely delivery.",
+      "cta": "Let’s Discuss Your Web App"
+    },
+    {
+      "title": "Frontend Development Services",
+      "description": "Responsive, modern frontend interfaces crafted using React, Next.js, and Tailwind CSS.",
+      "intro": "Make a stunning first impression with a fast, mobile-friendly, and intuitive frontend built using the latest technologies.",
+      "benefits": [
+        "Pixel-perfect UI",
+        "Fast-loading pages",
+        "Cross-browser compatibility",
+        "Mobile responsiveness",
+        "Seamless API integration"
+      ],
+      "delivery": "We use React, Next.js, and Tailwind CSS to craft dynamic, responsive interfaces.",
+      "why_astzo": "We focus on performance, accessibility, and clean design in every frontend project.",
+      "cta": "Start Your UI Project"
+    },
+    {
+      "title": "Backend Development Services",
+      "description": "Robust backend systems with Node.js, Express, MongoDB, and MySQL for scalable performance.",
+      "intro": "Power your digital platform with a high-performance backend that scales and adapts with your business.",
+      "benefits": [
+        "RESTful APIs",
+        "Real-time processing",
+        "Secure authentication",
+        "Optimized database queries",
+        "Scalable architecture"
+      ],
+      "delivery": "We implement backend logic, APIs, and databases following best practices and modern standards.",
+      "why_astzo": "We ensure your systems are secure, fast, and built to grow with your needs.",
+      "cta": "Get Backend Support"
+    },
+    {
+      "title": "WordPress Customization Services",
+      "description": "Customize your WordPress site to reflect your brand and achieve full functionality.",
+      "intro": "Transform your WordPress website to match your brand, features, and goals — with zero code bloat.",
+      "benefits": [
+        "Theme and layout changes",
+        "Plugin setup",
+        "Custom post types",
+        "Page builder integration",
+        "Full mobile responsiveness"
+      ],
+      "delivery": "We tailor your theme and plugins to match your branding and functionality goals.",
+      "why_astzo": "We create lean, optimized WordPress solutions without unnecessary bulk.",
+      "cta": "Customize Your Site Now"
+    },
+    {
+      "title": "Custom WordPress Theme & Plugin Development",
+      "description": "Build custom themes and plugins tailored for performance, SEO, and usability.",
+      "intro": "We build custom themes and plugins from the ground up for full control, speed, and security.",
+      "benefits": [
+        "Unique theme design",
+        "Custom admin panels",
+        "WooCommerce support",
+        "Plugin functionality tailored to business needs",
+        "Secure, optimized code"
+      ],
+      "delivery": "Our team follows WordPress coding standards and uses PHP, JS, and REST APIs.",
+      "why_astzo": "We engineer scalable, maintainable WordPress solutions from scratch.",
+      "cta": "Build a Custom Theme or Plugin"
+    },
+    {
+      "title": "Mobile App Development Services",
+      "description": "Cross-platform Android & iOS apps built with Flutter and React Native.",
+      "intro": "Reach more users with beautifully designed, high-performance mobile apps for both Android and iOS.",
+      "benefits": [
+        "Cross-platform development",
+        "Smooth animations",
+        "Real-time features",
+        "Firebase/Push/Payment integration",
+        "App store deployment"
+      ],
+      "delivery": "Using Flutter or React Native, we build and deploy robust mobile apps.",
+      "why_astzo": "We focus on usability, scalability, and native performance across devices.",
+      "cta": "Start Your App Project"
+    },
+    {
+      "title": "SEO Services",
+      "description": "Increase website traffic and visibility with on-page, technical, and off-page SEO strategies.",
+      "intro": "Drive more traffic and leads with SEO strategies that work — technical, content, and link-building.",
+      "benefits": [
+        "Keyword optimization",
+        "Technical audits",
+        "Speed & mobile optimization",
+        "Content strategy",
+        "Link building"
+      ],
+      "delivery": "We audit, plan, execute, and track SEO results monthly.",
+      "why_astzo": "We combine SEO knowledge with developer expertise for full optimization.",
+      "cta": "Improve My Rankings"
+    },
+    {
+      "title": "Website Maintenance Services",
+      "description": "Keep your website secure, fast, and up-to-date with our ongoing maintenance plans.",
+      "intro": "Let us keep your site running smoothly with regular updates, security scans, and backup monitoring.",
+      "benefits": [
+        "Plugin/theme/core updates",
+        "Backups and recovery",
+        "Broken link fixes",
+        "Uptime monitoring",
+        "Performance reviews"
+      ],
+      "delivery": "We perform routine updates, fix bugs, and share monthly maintenance reports.",
+      "why_astzo": "Peace of mind — we handle everything so you can focus on your business.",
+      "cta": "Get Maintenance Support"
+    },
+    {
+      "title": "Server Management Services",
+      "description": "Expert hosting setup, tuning, and server security for fast and stable websites.",
+      "intro": "Ensure fast load times and high uptime with our expert server configuration and monitoring.",
+      "benefits": [
+        "Hosting setup",
+        "Server hardening",
+        "SSL, firewalls, backups",
+        "Cloud hosting integration",
+        "Monitoring & scaling"
+      ],
+      "delivery": "We configure and maintain your server with performance and security in mind.",
+      "why_astzo": "We apply DevOps-grade processes for maximum server reliability.",
+      "cta": "Secure My Server"
+    },
+    {
+      "title": "Bug & Issue Fixing",
+      "description": "We quickly diagnose and resolve bugs or broken features in your website or app.",
+      "intro": "Broken UI? Functionality not working? We fix frontend and backend bugs with minimal downtime.",
+      "benefits": [
+        "Fast debugging",
+        "Code review and hotfixes",
+        "Layout & styling issues",
+        "Plugin/theme conflicts",
+        "Error logs & recovery"
+      ],
+      "delivery": "We trace, patch, and test bugs to ensure no further issues arise.",
+      "why_astzo": "We’re quick, accurate, and transparent in our process.",
+      "cta": "Fix My Site"
+    },
+    {
+      "title": "Website Speed Optimization",
+      "description": "Reduce load time and improve performance scores with advanced speed optimization.",
+      "intro": "A slow website hurts conversions. We’ll boost performance, SEO, and Core Web Vitals metrics.",
+      "benefits": [
+        "Image & asset optimization",
+        "Code splitting",
+        "Lazy loading",
+        "CDN and cache setup",
+        "Database tuning"
+      ],
+      "delivery": "We analyze your performance metrics and implement targeted fixes.",
+      "why_astzo": "We know what slows down sites — and how to fix it fast.",
+      "cta": "Make My Site Faster"
+    },
+    {
+      "title": "Website Consultation Services",
+      "description": "Get expert advice to plan, design, or scale your digital platform effectively.",
+      "intro": "Not sure where to start? We provide actionable guidance on web and app strategy, tech stacks, and growth.",
+      "benefits": [
+        "Platform and tool recommendations",
+        "Strategy sessions",
+        "UX audits",
+        "SEO/Performance reviews",
+        "Launch planning"
+      ],
+      "delivery": "Via Zoom/Meet sessions, we guide you with real examples and expert insights.",
+      "why_astzo": "We turn confusion into clarity with industry-proven advice.",
+      "cta": "Book a Free Consultation"
+    }
+  ]
+  
