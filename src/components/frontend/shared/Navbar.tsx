@@ -142,7 +142,7 @@ const Navbar = () => {
   };
 
   return (
-    <div
+    <header
       className={`w-full h-[78px] fixed flex items-center top-0 left-0 z-50 bg-primary/90 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
@@ -285,7 +285,7 @@ const Navbar = () => {
           </Sheet>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 export default Navbar;
