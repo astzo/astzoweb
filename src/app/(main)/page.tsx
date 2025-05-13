@@ -1,5 +1,5 @@
 import Banner from "@/components/frontend/home/Banner";
-import Services from "@/components/frontend/home/Services";
+import TopServices from "@/components/frontend/home/TopServices";
 
 
 
@@ -7,8 +7,8 @@ export default function Header() {
 
   return (
     <>
-    <Banner/>
-      <Services/>
+      <Banner />
+      <TopServices />
     </>
   );
 }
