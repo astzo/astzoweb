@@ -4,10 +4,11 @@ import Wrapper from "../shared/Wrapper";
 import SectionTitle from "../shared/SectionTitle";
 import ServiceCard from "../shared/ServiceCard";
 import { TService } from "@/utils/TService";
+import Link from "next/link";
 
 
 
-export default function Services() {
+export default function TopServices() {
   const [services, setServices] = useState<TService[]>([]);
 
   // data load from json file
@@ -30,16 +31,29 @@ export default function Services() {
   }
   return (
     <section>
-      <Wrapper className='space-y-6'>
+      <Wrapper className='space-y-6 flex flex-col justify-center items-center'>
         <SectionTitle
           title='Our Services'
           subTitle='Explore our full suite of digital solutions — from web and mobile development to SEO and server management. Everything you need to build, grow, and maintain your online presence.'
         />
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 xl:gap-8 2xl:gap-10'>
           {services.map(({ id, icon, title, description, cta }) => (
-            <ServiceCard key={id} id={id} icon={icon} title={title} description={description} cta={cta} />
+            <ServiceCard
+              key={id}
+              id={id}
+              icon={icon}
+              title={title}
+              description={description}
+              cta={cta}
+            />
           ))}
         </div>
+        <Link
+          href='/services'
+          className='bg-accent text-background px-4 py-2 rounded-lg font-bold hover:text-foreground transition-all duration-500 z-40'
+        >
+          Explore all services
+        </Link>
       </Wrapper>
     </section>
   );
