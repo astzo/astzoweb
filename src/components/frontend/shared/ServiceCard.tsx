@@ -9,7 +9,7 @@ import React from 'react'
 
 export default function ServiceCard({id, icon, title, description, cta}: TService) {
   return (
-    <Card className='relative overflow-hidden flex flex-col justify-between text-center shadow-lg sm:hover:scale-105 transition-all duration-400'>
+    <Card className='relative bg-white px-6 py-12 overflow-hidden flex flex-col justify-between text-center shadow-lg sm:hover:scale-105 transition-all duration-400'>
       <CardHeader>
         <CardTitle className='mx-auto'>
           <div className='border-2 rounded-full p-4 inline-block'>

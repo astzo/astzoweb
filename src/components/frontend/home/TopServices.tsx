@@ -32,7 +32,7 @@ export default function TopServices() {
     );
   }
   return (
-    <section>
+    <section className='bg-radial-[at_25%_25%] from-white to-background/50 to-75%'>
       <Wrapper className='flex flex-col justify-center items-center'>
         <SectionTitle
           centered

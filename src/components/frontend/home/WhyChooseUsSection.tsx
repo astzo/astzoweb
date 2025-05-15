@@ -52,7 +52,7 @@ const features = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section className='py-20 px-4 md:px-8 bg-background'>
+    <section className='py-20 px-4 md:px-8 bg-linear-to-t from-white to-background'>
       <Wrapper>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
           <div>

@@ -32,9 +32,8 @@ export default function PortfolioSection() {
     );
   }
 
-
   return (
-    <section>
+    <section className='bg-linear-to-t from-white to-background'>
       <Wrapper className='flex flex-col justify-center items-center'>
         <ProjectTabs projects={projects} />
         <Link

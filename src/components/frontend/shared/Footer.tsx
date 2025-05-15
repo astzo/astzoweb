@@ -8,17 +8,17 @@ import ASTZOLogo from "./ASTZOLogo";
 
 export default function Footer() {
   return (
-    <footer className='bg-slate-900 text-white '>
+    <footer className='bg-primary bg-blend-darken text-white '>
       <Wrapper className='relative'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'>
           {/* Company Info */}
           <div className='space-y-4'>
             {/* Logo */}
-            <ASTZOLogo/>
-            <h2 className='text-slate-300 text-sm 2xl:text-md font-semibold'>
+            <ASTZOLogo />
+            <h2 className='text-white text-sm 2xl:text-md font-semibold'>
               Advanced Software & Technology Zone
             </h2>
-            <p className='text-slate-300 text-sm'>
+            <p className='text-white text-sm'>
               Web & App Development | WordPress | SEO | Maintenance |
               Consultation
             </p>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className='text-slate-300 hover:text-accent transition-colors text-sm'
+                    className='text-white hover:text-accent transition-colors text-sm'
                   >
                     {item}
                   </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className='text-slate-300 hover:text-accent transition-colors text-sm'
+                    className='text-white hover:text-accent transition-colors text-sm'
                   >
                     {item}
                   </Link>
@@ -62,9 +62,7 @@ export default function Footer() {
             <ul className='space-y-3'>
               <li className='flex items-start'>
                 <Mail className='h-5 w-5 mr-2 text-accent flex-shrink-0 mt-0.5' />
-                <span className='text-slate-300 text-sm'>
-                  contact@astzo.com
-                </span>
+                <span className='text-white text-sm'>contact@astzo.com</span>
               </li>
               <li className='flex items-start'>
                 <Image
@@ -74,21 +72,19 @@ export default function Footer() {
                   alt='whatsapp'
                   className='h-5 w-5 mr-2 text-accent flex-shrink-0 mt-0.5'
                 />
-                <span className='text-slate-300 text-sm'>+8801804555186</span>
+                <span className='text-white text-sm'>+8801804555186</span>
               </li>
               <li className='flex items-start'>
                 <MapPin className='h-5 w-5 mr-2 text-accent flex-shrink-0 mt-0.5' />
-                <span className='text-slate-300 text-sm'>
-                  Dhaka, Bangladesh
-                </span>
+                <span className='text-white text-sm'>Dhaka, Bangladesh</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className='pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center'>
-          <p className='text-sm text-slate-400'>
+        <div className='pt-8 border-t border-secondary/50 flex flex-col md:flex-row justify-between items-center'>
+          <p className='text-sm text-white'>
             &copy; {new Date().getFullYear()} ASTZO. All rights reserved.
           </p>
 

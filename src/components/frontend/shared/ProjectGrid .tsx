@@ -20,7 +20,7 @@ export function ProjectGrid({
       {filtered.map((project) => (
         <div
           key={project.id}
-          className='group bg-background border border-primary/10 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all'
+          className='group bg-white border border-primary/10 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all'
         >
           <div className='relative h-80 overflow-hidden'>
             <Image
@@ -46,7 +46,7 @@ export function ProjectGrid({
               </span>
               <Link
                 href={`/portfolio/${project.id}`}
-                className='border px-2 py-1 rounded-md hover:text-accent'
+                className='border px-2 py-1 rounded-md hover:text-accent hover:border-accent'
               >
                 Details →
               </Link>

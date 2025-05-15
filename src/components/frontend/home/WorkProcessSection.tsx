@@ -56,9 +56,10 @@ export default function WorkProcessSection() {
   };
 
   return (
-    <section className='py-20 px-4 md:px-8 bg-primary/5'>
+    <section className='py-20 px-4 md:px-8 bg-linear-to-t from-background to-white'>
       <div className='container mx-auto'>
         <SectionTitle
+          className='text-black'
           title='Our Working Process'
           description="From concept to launch — here's how we bring your ideas to life"
           centered

@@ -7,11 +7,11 @@ import Wrapper from "../shared/Wrapper";
 
 export default function CtaSection() {
   return (
-    <section className='py-20 px-4 md:px-8 bg-primary relative overflow-hidden'>
+    <section className='py-20 px-4 md:px-8 bg-primary bg-blend-darken relative overflow-hidden'>
       {/* Background decorative elements */}
       <div className='absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none'>
-        <div className='absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl'></div>
-        <div className='absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl'></div>
+        <div className='absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/40 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl'></div>
+        <div className='absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/40 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl'></div>
       </div>
 
       <Wrapper className='relative z-10'>
