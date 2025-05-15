@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/frontend/shared/Navbar";
 import ParticlesBackground from "@/components/frontend/shared/ParticalsBackground";
+import Footer from "@/components/frontend/shared/Footer";
 
 export const metadata: Metadata = {
   title: "ASTZO",
@@ -28,11 +29,7 @@ export default function RootLayout({
           <ParticlesBackground />
           {children}
         </main>
-        <footer>
-          <div className='container mx-auto px-4 py-8 text-center text-sm text-gray-500'>
-            &copy; {new Date().getFullYear()} astzo. All rights reserved.
-          </div>
-        </footer>
+        <Footer/>
       </body>
     </html>
   );
