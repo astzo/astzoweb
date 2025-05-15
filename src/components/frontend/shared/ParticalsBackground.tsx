@@ -49,9 +49,7 @@ const ParticlesBackground = () => {
             "#FFFAF0", // Floral white
             "#F0C420", // Light gold
             "#FFF8DC", // Cornsilk
-            "#00ffff", // Cyan
             "#0B0B45", // Dark Navy blue
-            "#FF5C00", // Neon orange,
           ],
         },
         links: {
@@ -73,7 +71,7 @@ const ParticlesBackground = () => {
             width: 1920,
             height: 1080,
           },
-          value: 150, // Increased for more stars
+          value: 100, // Increased for more stars
         },
         opacity: {
           value: {

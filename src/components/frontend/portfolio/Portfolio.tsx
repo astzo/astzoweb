@@ -34,10 +34,11 @@ export default function Portfolio() {
 
   return (
     <section>
-      <Wrapper className='relative'>
+      <Wrapper>
         <SectionTitle
+          centered
           title='Our Recent Projects'
-          subTitle="Explore the solutions we've delivered for clients across industries. Each project reflects our commitment to quality and innovation."
+          description="Explore the solutions we've delivered for clients across industries. Each project reflects our commitment to quality and innovation."
           className='mb-6'
         />
         <Tabs defaultValue='all' className='w-full'>

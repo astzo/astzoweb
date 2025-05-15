@@ -20,7 +20,7 @@ export default function PortfolioSection() {
           try {
             const res = await fetch("/projects.json");
             const data = await res.json();
-            setProjects(data.slice(0, 6));
+            setProjects(data.slice(0, 3));
           } catch (err) {
             console.error("Error loading projects:", err);
             setProjects([]);
@@ -39,10 +39,11 @@ export default function PortfolioSection() {
 
   return (
     <section>
-      <Wrapper className='relative space-y-6 flex flex-col justify-center items-center'>
+      <Wrapper className='flex flex-col justify-center items-center'>
         <SectionTitle
+        centered
           title='Our Recent Projects'
-          subTitle="Explore the solutions we've delivered for clients across industries. Each project reflects our commitment to quality and innovation."
+          description="Explore the solutions we've delivered for clients across industries. Each project reflects our commitment to quality and innovation."
           className='mb-6'
         />
         <Tabs defaultValue='all' className='w-full'>
@@ -66,7 +67,7 @@ export default function PortfolioSection() {
         </Tabs>
         <Link
           href='/portfolio'
-          className='bg-accent text-background px-4 py-2 rounded-lg font-bold hover:text-foreground transition-all duration-500 z-40'
+          className='bg-accent text-background px-4 py-2 rounded-lg font-bold hover:text-foreground transition-all duration-500 z-10 mt-12'
         >
           More Portfolio
         </Link>

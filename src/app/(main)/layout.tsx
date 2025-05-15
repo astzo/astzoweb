@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/frontend/shared/Navbar";
-import ParticlesBackground from "@/components/frontend/shared/ParticalsBackground";
 import Footer from "@/components/frontend/shared/Footer";
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function RootLayout({
       >
         <Navbar />
         <main className='relative min-h-screen'>
-          <ParticlesBackground />
           {children}
         </main>
         <Footer/>

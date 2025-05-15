@@ -6,8 +6,6 @@ import ServiceCard from "../shared/ServiceCard";
 import { TService } from "@/utils/TService";
 import Link from "next/link";
 
-
-
 export default function TopServices() {
   const [services, setServices] = useState<TService[]>([]);
 
@@ -27,14 +25,19 @@ export default function TopServices() {
     loadServices();
   }, []);
   if (services.length === 0) {
-    return <div className="text-center text-xl font-bold">Services not available</div>;
+    return (
+      <div className='text-center text-xl font-bold'>
+        Services not available
+      </div>
+    );
   }
   return (
     <section>
-      <Wrapper className='space-y-6 flex flex-col justify-center items-center'>
+      <Wrapper className='flex flex-col justify-center items-center'>
         <SectionTitle
+          centered
           title='Our Services'
-          subTitle='Explore our full suite of digital solutions — from web and mobile development to SEO and server management. Everything you need to build, grow, and maintain your online presence.'
+          description='Explore our full suite of digital solutions — from web and mobile development to SEO and server management. Everything you need to build, grow, and maintain your online presence.'
         />
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 xl:gap-8 2xl:gap-10'>
           {services.map(({ id, icon, title, description, cta }) => (
@@ -50,7 +53,7 @@ export default function TopServices() {
         </div>
         <Link
           href='/services'
-          className='bg-accent text-background px-4 py-2 rounded-lg font-bold hover:text-foreground transition-all duration-500 z-40'
+          className='bg-accent text-background px-4 py-2 rounded-lg font-bold hover:text-foreground transition-all duration-500 z-10 mt-12'
         >
           Explore all services
         </Link>

@@ -2,18 +2,36 @@ import { cn } from '@/lib/utils';
 import React from 'react'
 
 type Props = {
-    title: string,
-    subTitle: string,
-    className?: string
-}
+  title: string;
+  description: string;
+  className?: string;
+  centered?: boolean;
+  descriptionClassName?: string;
+};
 
-export default function SectionTitle({ title, subTitle, className }: Props) {
+export default function SectionTitle({
+  title,
+  description,
+  className,
+  centered = false,
+  descriptionClassName,
+}: Props) {
   return (
-    <div className={cn(`text-center space-y-3 ${className}`)}>
-      <h2 className='text-xl md:text-2xl font-bold border-b-4 border-double inline-block'>
+    <div className={cn(centered && "text-center", "mb-12", className)}>
+      <h2 className='text-3xl md:text-4xl font-bold text-primary mb-4'>
         {title}
       </h2>
-      <p className='text-base sm:w-[90%] lg:w-[80%] mx-auto'>{subTitle}</p>
+      {description && (
+        <p
+          className={cn(
+            "text-text/80 max-w-3xl",
+            centered && "mx-auto",
+            descriptionClassName
+          )}
+        >
+          {description}
+        </p>
+      )}
     </div>
   );
 }
