@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ASTZOLogo from "./ASTZOLogo";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -153,113 +154,10 @@ const Navbar = () => {
         className={`container mx-auto px-2.5 flex items-center justify-between `}
       >
         {/* Logo */}
-        <div className='text-3xl font-bold text-background flex items-center gap-0 relative tracking-wider'>
-          <span>ASTZ</span>
-          <svg
-            width='90'
-            height='90'
-            viewBox='0 0 300 300'
-            xmlns='http://www.w3.org/2000/svg'
-            className='absolute z-10 left-14'
-          >
-            <defs>
-              <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='4'
-                  floodColor='orange'
-                />
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='8'
-                  floodColor='orange'
-                />
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='12'
-                  floodColor='orange'
-                />
-              </filter>
-            </defs>
-
-            {/* Base O */}
-            <text
-              x='50%'
-              y='50%'
-              textAnchor='middle'
-              dy='.35em'
-              fontSize='120'
-              fontFamily='montserrat'
-              fill='#FF5C00'
-              stroke='none'
-              strokeWidth='3'
-              filter='url(#)'
-            >
-              O
-            </text>
-
-            {/* Ripple Circles */}
-            <circle
-              cx='150'
-              cy='150'
-              r='70'
-              stroke='orange'
-              strokeWidth='2'
-              fill='none'
-              filter='url(#glow)'
-            >
-              <animate
-                attributeName='r'
-                from='70'
-                to='140'
-                dur='2s'
-                repeatCount='indefinite'
-              />
-              <animate
-                attributeName='opacity'
-                from='1'
-                to='0'
-                dur='2s'
-                repeatCount='indefinite'
-              />
-            </circle>
-
-            <circle
-              cx='150'
-              cy='150'
-              r='70'
-              stroke='orange'
-              strokeWidth='2'
-              fill='none'
-              filter='url(#glow)'
-            >
-              <animate
-                attributeName='r'
-                from='70'
-                to='140'
-                dur='2s'
-                begin='1s'
-                repeatCount='indefinite'
-              />
-              <animate
-                attributeName='opacity'
-                from='1'
-                to='0'
-                dur='2s'
-                begin='1s'
-                repeatCount='indefinite'
-              />
-            </circle>
-          </svg>
-        </div>
+        <ASTZOLogo/>
 
         {/* Desktop Nav */}
-        <div className='hidden lg:block'>
-          {renderNavLinks()}
-        </div>
+        <div className='hidden lg:block'>{renderNavLinks()}</div>
 
         {/* Right Actions */}
         <div className='block lg:hidden'>
