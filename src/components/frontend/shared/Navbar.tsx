@@ -152,14 +152,14 @@ const Navbar = () => {
         className={`container mx-auto px-2.5 flex items-center justify-between `}
       >
         {/* Logo */}
-        <div className='text-3xl font-bold text-background flex items-center gap-0 relative'>
+        <div className='text-3xl font-bold text-background flex items-center gap-0 relative tracking-wider'>
           <span>ASTZ</span>
           <svg
             width='90'
             height='90'
             viewBox='0 0 300 300'
             xmlns='http://www.w3.org/2000/svg'
-            className='absolute z-10 left-13'
+            className='absolute z-10 left-14'
           >
             <defs>
               <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
