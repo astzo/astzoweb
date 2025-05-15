@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { TProject } from "@/utils/TProject";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function ProjectGrid({
@@ -19,14 +18,11 @@ export function ProjectGrid({
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {filtered.map((project) => (
-        <motion.div
+        <div
           key={project.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           className='group bg-background border border-primary/10 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all'
         >
-          <div className='relative h-60 overflow-hidden'>
+          <div className='relative h-80 overflow-hidden'>
             <Image
               src={project.image || "/placeholder.svg"}
               alt={project.title}
@@ -34,10 +30,7 @@ export function ProjectGrid({
               className='object-cover transition-transform duration-500 group-hover:scale-105'
             />
             <div className='absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-              <Button
-                variant='outline'
-                className='border-none'
-              >
+              <Button variant='outline' className='border-none'>
                 View Project
               </Button>
             </div>
@@ -51,14 +44,15 @@ export function ProjectGrid({
               <span className='text-xs uppercase tracking-wider text-accent font-medium'>
                 {project.category === "web" ? "Web Development" : "Mobile App"}
               </span>
-              <Link href={`/portfolio/${project.id}`}
-              className="border px-2 py-1 rounded-md hover:text-accent"
+              <Link
+                href={`/portfolio/${project.id}`}
+                className='border px-2 py-1 rounded-md hover:text-accent'
               >
                 Details →
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );
