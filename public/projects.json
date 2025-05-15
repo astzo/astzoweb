@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "category": "web",
+      "description": "A full-featured e-commerce solution with inventory management.",
+      "image": "/images/hero.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Healthcare Mobile App",
+      "category": "mobile",
+      "description": "Patient management system with appointment scheduling.",
+      "image": "/placeholder.svg?height=600&width=800"
+    },
+    {
+      "id": 3,
+      "title": "Real Estate Website",
+      "category": "web",
+      "description": "Property listing and management platform with virtual tours.",
+      "image": "/placeholder.svg?height=600&width=800"
+    },
+    {
+      "id": 4,
+      "title": "Fitness Tracking App",
+      "category": "mobile",
+      "description": "Workout planning and progress tracking application.",
+      "image": "/placeholder.svg?height=600&width=800"
+    },
+    {
+      "id": 5,
+      "title": "Corporate Dashboard",
+      "category": "web",
+      "description": "Data visualization and analytics dashboard for enterprise.",
+      "image": "/placeholder.svg?height=600&width=800"
+    },
+    {
+      "id": 6,
+      "title": "Food Delivery App",
+      "category": "mobile",
+      "description": "On-demand food ordering and delivery platform.",
+      "image": "/placeholder.svg?height=600&width=800"
+    }
+  ]
+  

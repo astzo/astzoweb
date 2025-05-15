@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { name: "Home", href: "/" },
   // { name: "Products", href: "/products" },
+  { name: "Portfolio", href: "/portfolio"},
   { name: "Services", href: "/services" },
   {
     name: "Company",
@@ -83,7 +84,7 @@ const Navbar = () => {
   // Render navigation links (used for both desktop and mobile)
   const renderNavLinks = () => {
     return (
-      <div className='flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6 '>
+      <div className='flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:gap-6 '>
         {navItems.map((item) => (
           <div
             key={item.name}
@@ -256,12 +257,12 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className='hidden md:block'>
+        <div className='hidden lg:block'>
           {renderNavLinks()}
         </div>
 
         {/* Right Actions */}
-        <div className='block md:hidden'>
+        <div className='block lg:hidden'>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <div className=' text-background'>
