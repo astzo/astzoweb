@@ -4,14 +4,21 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ASTZOLogo from "./ASTZOLogo";
 
 const navItems = [
   { name: "Home", href: "/" },
   // { name: "Products", href: "/products" },
-  { name: "Portfolio", href: "/portfolio"},
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Services", href: "/services" },
   {
     name: "Company",
@@ -111,7 +118,7 @@ const Navbar = () => {
                         key={subItem.name}
                         href={subItem.href}
                         className={`font-semibold text-[16px] text-foreground transition-all duration-500 hover:text-accent whitespace-nowrap ${
-                          pathname === subItem.href && "text-orange-500"
+                          pathname === subItem.href && "text-accent"
                         }`}
                       >
                         {subItem.name}
@@ -125,7 +132,7 @@ const Navbar = () => {
               <Link
                 href={item.href}
                 className={`font-semibold text-[16px] text-background transition-all duration-500 hover:text-accent ${
-                  pathname === item.href && "text-orange-500"
+                  pathname === item.href && "text-accent"
                 }`}
               >
                 {item.name}
@@ -133,7 +140,7 @@ const Navbar = () => {
             )}
           </div>
         ))}
-        <Button className='bg-accent text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200 border-none shadow-none'>
+        <Button className='bg-accent bg-blend-darken text-background text-[16px] font-semibold hover:bg-accent/80 transition-all duration-200 border-none shadow-none'>
           <Link href='/contact-us' className='w-full'>
             Contact Us
           </Link>
@@ -144,7 +151,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`w-full h-[78px] fixed flex items-center top-0 left-0 z-50 bg-primary/90 transition-transform duration-300 ${
+      className={`w-full h-[78px] fixed flex items-center top-0 left-0 z-50 bg-primary transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -153,113 +160,10 @@ const Navbar = () => {
         className={`container mx-auto px-2.5 flex items-center justify-between `}
       >
         {/* Logo */}
-        <div className='text-3xl font-bold text-background flex items-center gap-0 relative tracking-wider'>
-          <span>ASTZ</span>
-          <svg
-            width='90'
-            height='90'
-            viewBox='0 0 300 300'
-            xmlns='http://www.w3.org/2000/svg'
-            className='absolute z-10 left-14'
-          >
-            <defs>
-              <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='4'
-                  floodColor='orange'
-                />
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='8'
-                  floodColor='orange'
-                />
-                <feDropShadow
-                  dx='0'
-                  dy='0'
-                  stdDeviation='12'
-                  floodColor='orange'
-                />
-              </filter>
-            </defs>
-
-            {/* Base O */}
-            <text
-              x='50%'
-              y='50%'
-              textAnchor='middle'
-              dy='.35em'
-              fontSize='120'
-              fontFamily='montserrat'
-              fill='#FF5C00'
-              stroke='none'
-              strokeWidth='3'
-              filter='url(#)'
-            >
-              O
-            </text>
-
-            {/* Ripple Circles */}
-            <circle
-              cx='150'
-              cy='150'
-              r='70'
-              stroke='orange'
-              strokeWidth='2'
-              fill='none'
-              filter='url(#glow)'
-            >
-              <animate
-                attributeName='r'
-                from='70'
-                to='140'
-                dur='2s'
-                repeatCount='indefinite'
-              />
-              <animate
-                attributeName='opacity'
-                from='1'
-                to='0'
-                dur='2s'
-                repeatCount='indefinite'
-              />
-            </circle>
-
-            <circle
-              cx='150'
-              cy='150'
-              r='70'
-              stroke='orange'
-              strokeWidth='2'
-              fill='none'
-              filter='url(#glow)'
-            >
-              <animate
-                attributeName='r'
-                from='70'
-                to='140'
-                dur='2s'
-                begin='1s'
-                repeatCount='indefinite'
-              />
-              <animate
-                attributeName='opacity'
-                from='1'
-                to='0'
-                dur='2s'
-                begin='1s'
-                repeatCount='indefinite'
-              />
-            </circle>
-          </svg>
-        </div>
+        <ASTZOLogo />
 
         {/* Desktop Nav */}
-        <div className='hidden lg:block'>
-          {renderNavLinks()}
-        </div>
+        <div className='hidden lg:block'>{renderNavLinks()}</div>
 
         {/* Right Actions */}
         <div className='block lg:hidden'>

@@ -32,10 +32,11 @@ export default function Services() {
   }
   return (
     <section>
-      <Wrapper className='space-y-6'>
+      <Wrapper>
         <SectionTitle
+        centered
           title='Our Services'
-          subTitle='Explore our full suite of digital solutions — from web and mobile development to SEO and server management. Everything you need to build, grow, and maintain your online presence.'
+          description='Explore our full suite of digital solutions — from web and mobile development to SEO and server management. Everything you need to build, grow, and maintain your online presence.'
         />
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 xl:gap-8 2xl:gap-10'>
           {services.map(({ id, icon, title, description, cta }) => (

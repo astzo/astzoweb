@@ -1,6 +1,11 @@
 import Banner from "@/components/frontend/home/Banner";
+import ClientsSection from "@/components/frontend/home/ClientsSection";
+import CtaSection from "@/components/frontend/home/CtaSection";
 import PortfolioSection from "@/components/frontend/home/PortfolioSection";
+import TestimonialsSection from "@/components/frontend/home/TestimonialsSection";
 import TopServices from "@/components/frontend/home/TopServices";
+import WhyChooseUsSection from "@/components/frontend/home/WhyChooseUsSection";
+import WorkProcessSection from "@/components/frontend/home/WorkProcessSection";
 
 
 
@@ -11,6 +16,11 @@ export default function Header() {
       <Banner />
       <TopServices />
       <PortfolioSection/>
+      <WorkProcessSection/>
+      <WhyChooseUsSection/>
+      <TestimonialsSection/>
+      <CtaSection/>
+      <ClientsSection/>
     </>
   );
 }
