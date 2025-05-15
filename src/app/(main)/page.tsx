@@ -1,4 +1,5 @@
 import Banner from "@/components/frontend/home/Banner";
+import ClientsSection from "@/components/frontend/home/ClientsSection";
 import CtaSection from "@/components/frontend/home/CtaSection";
 import PortfolioSection from "@/components/frontend/home/PortfolioSection";
 import TestimonialsSection from "@/components/frontend/home/TestimonialsSection";
@@ -19,6 +20,7 @@ export default function Header() {
       <WhyChooseUsSection/>
       <TestimonialsSection/>
       <CtaSection/>
+      <ClientsSection/>
     </>
   );
 }
